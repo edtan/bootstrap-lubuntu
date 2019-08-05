@@ -1,2 +1,2 @@
 # bootstrap-lubuntu
-Lubuntu setup scripts with some defaults
+Lubuntu setup scripts with some defaults - still a work in progress
