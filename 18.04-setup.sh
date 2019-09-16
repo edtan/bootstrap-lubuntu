@@ -83,6 +83,21 @@ echo "deb https://debian.sur5r.net/i3/ $(grep '^DISTRIB_CODENAME=' /etc/lsb-rele
 sudo apt update
 sudo apt install i3
 
+# nvm (https://github.com/nvm-sh/nvm - manual install)
+export NVM_DIR="$HOME/.nvm" && (
+  git clone https://github.com/nvm-sh/nvm.git "$NVM_DIR"
+  cd "$NVM_DIR"
+  git checkout `git describe --abbrev=0 --tags --match "v[0-9]*" $(git rev-list --tags --max-count=1)`
+) && \. "$NVM_DIR/nvm.sh"
+
+cat <<- 'EOF' >> ~/.bashrc
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+EOF
+
+#node (install latest version)
+nvm install node
+
 # get keyboard shortcut mappings
 # https://askubuntu.com/a/306172 -> window tiling
 # TODO: merge keybindings.xml into lubuntu-rc.xml
