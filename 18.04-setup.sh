@@ -83,6 +83,11 @@ echo "deb https://debian.sur5r.net/i3/ $(grep '^DISTRIB_CODENAME=' /etc/lsb-rele
 sudo apt update
 sudo apt install i3
 
+# update i3 keybindings to match vim, and to support moving windows between 2
+# monitors
+mkdir -p "$HOME/.config/i3"
+cp i3-config "$HOME/.config/i3/config"
+
 # nvm (https://github.com/nvm-sh/nvm - manual install)
 export NVM_DIR="$HOME/.nvm" && (
   git clone https://github.com/nvm-sh/nvm.git "$NVM_DIR"
