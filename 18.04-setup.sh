@@ -17,6 +17,7 @@ sudo apt install \
   gnupg-agent \
   keepassx \
   libncurses5-dev \
+  libreadline-dev \
   libssl-dev \
   libelf-dev \
   make \
@@ -44,6 +45,8 @@ echo 'eval "$(rbenv init -)"' >> ~/.bashrc
 mkdir -p "$(rbenv root)"/plugins
 git clone https://github.com/rbenv/ruby-build.git "$(rbenv root)"/plugins/ruby-build
 rbenv install 2.6.4
+rbenv global 2.6.4
+gem install bundler
 
 # docker
 # https://docs.docker.com/install/linux/docker-ce/ubuntu/
