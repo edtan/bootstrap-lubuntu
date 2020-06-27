@@ -1,0 +1,4 @@
+# https://askubuntu.com/questions/51445/how-do-i-calibrate-a-touchscreen-on-a-dual-monitor-system
+# First run xinput to get input id of touch screen (e.g. 17)
+# Then run xrandr to get touch screen id (e.g. eDP-1)
+xinput map-to-output 17 eDP-1
